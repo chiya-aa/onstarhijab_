@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <head>
+      <meta charset="UTF-8" />
+      <title>Onstar Hijab</title>
+
+      <!-- CSS LAIN (Bootstrap, dll) -->
+
+      <style>
+        /* --- FIX LOGO FOOTER & FOOTER STYLE --- */
+
+        /* FIX ukuran logo */
+        .brand-logo {
+          width: 120px !important;
+          height: auto !important;
+          object-fit: contain;
+          display: inline-block;
+          margin-bottom: 10px;
+        }
+
+        footer#contact h6,
+        footer#contact .fw-bold {
+          color: #111827 !important;
+        }
+
+        footer#contact p,
+        footer#contact span,
+        footer#contact div,
+        footer#contact small {
+          color: rgba(31, 41, 55, 0.85) !important;
+        }
+
+        footer#contact a {
+          color: rgba(31, 41, 55, 0.9) !important;
+          text-decoration: none;
+          transition: 0.3s;
+        }
+
+        footer#contact a:hover {
+          color: var(--dark-pink) !important;
+          padding-left: 5px;
+        }
+
+        footer#contact i {
+          color: var(--dark-pink) !important;
+          margin-right: 8px;
+        }
+
+        footer#contact hr {
+          border-color: rgba(31, 41, 55, 0.1) !important;
+          margin: 30px 0;
+        }
+      </style>
+    </head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Onstar Hijab - Official Store</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --pink-star: #ff85a1;
+        --blue-star: #4da3ff;
+        --pink-light: #fff5f7;
+        --blue-light: #f0f7ff;
+        --soft-bg: #fdfbff;
+        --dark-text: #1f2937;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: var(--soft-bg);
+        margin: 0;
+        overflow-x: hidden;
+        color: var(--dark-text);
+      }
+
+      /* --- NAVBAR STYLE --- */
+      .navbar {
+        background-color: white;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+        padding: 12px 0;
+      }
+      .logo-img {
+        height: 55px;
+        width: auto;
+        margin-right: 12px;
+        border-radius: 8px;
+      }
+      .navbar-brand {
+        font-family: "Playfair Display", serif;
+        font-weight: 700;
+        font-size: 1.8rem;
+        color: var(--pink-star) !important;
+        display: flex;
+        align-items: center;
+      }
+      .navbar-brand span {
+        color: var(--blue-star);
+      }
+
+      /* --- HERO SECTION & ANIMATED BUTTON --- */
+      .hero-full {
+        height: 80vh;
+        background: linear-gradient(135deg, #ffdae0, #d0ebff);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        border-radius: 0 0 80px 80px;
+        margin-bottom: 50px;
+      }
+      .hero-full h1 {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(3rem, 8vw, 4.5rem);
+        font-weight: 800;
+        color: #333;
+      }
+
+      /* Animasi Tombol Lihat Koleksi */
+      .btn-hero-anim {
+        background: var(--pink-star) !important;
+        border: none !important;
+        padding: 18px 45px !important;
+        font-size: 1.1rem;
+        transition: all 0.3s ease-in-out !important;
+        box-shadow: 0 10px 20px rgba(255, 133, 161, 0.3);
+        animation: pulse-pink 2s infinite; /* Efek berdenyut */
+      }
+
+      .btn-hero-anim:hover {
+        transform: translateY(-5px) scale(1.05);
+        box-shadow: 0 15px 30px rgba(255, 133, 161, 0.5);
+        background: #ff6b8e !important;
+      }
+
+      @keyframes pulse-pink {
+        0% {
+          transform: scale(1);
+          box-shadow: 0 0 0 0 rgba(255, 133, 161, 0.7);
+        }
+        70% {
+          transform: scale(1.05);
+          box-shadow: 0 0 0 15px rgba(255, 133, 161, 0);
+        }
+        100% {
+          transform: scale(1);
+          box-shadow: 0 0 0 0 rgba(255, 133, 161, 0);
+        }
+      }
+
+      /* --- PRODUCT CARDS --- */
+      .card-hijab {
+        border: none;
+        border-radius: 25px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        background: white;
+        padding: 20px;
+        height: 100%;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+      .card-hijab:hover {
+        transform: translateY(-12px) scale(1.02);
+        box-shadow: 0 20px 40px rgba(255, 133, 161, 0.2);
+      }
+      .product-img-container {
+        width: 100%;
+        height: 280px;
+        overflow: hidden;
+        border-radius: 20px;
+        background-color: #f8f9fa;
+        margin-bottom: 15px;
+      }
+      .product-img-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: 0.5s;
+      }
+      .card-hijab:hover .product-img-container img {
+        transform: scale(1.1);
+      }
+
+      .description {
+        font-size: 14px;
+        color: #666;
+        margin: 6px 0 10px;
+        line-height: 1.4;
+        text-align: center;
+      }
+
+      /* --- KERANJANG & FORM STYLE --- */
+      .cart-container {
+        background: white;
+        padding: 40px;
+        border-radius: 40px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05);
+      }
+      .form-control,
+      .form-select {
+        border: 1.5px solid #eee !important;
+        border-radius: 12px !important;
+        padding: 12px 18px !important;
+        margin-bottom: 18px !important;
+      }
+      .btn-checkout {
+        background: linear-gradient(90deg, var(--pink-star), var(--blue-star));
+        color: white;
+        border: none;
+        width: 100%;
+        padding: 18px;
+        border-radius: 18px;
+        font-weight: 700;
+        transition: 0.3s;
+      }
+      .btn-checkout:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(77, 163, 255, 0.3);
+      }
+
+      /* --- FOOTER STYLE --- */
+      footer#contact {
+        background: linear-gradient(
+          135deg,
+          var(--pink-light) 0%,
+          var(--blue-light) 100%
+        ) !important;
+        padding: 70px 0 30px 0 !important;
+      }
+      .brand-logo {
+        width: 100px !important;
+        height: auto !important;
+        border-radius: 15px;
+        margin-bottom: 15px;
+      }
+      footer#contact h6,
+      footer#contact .fw-bold {
+        color: var(--dark-text) !important;
+        margin-bottom: 20px;
+      }
+      footer#contact p,
+      footer#contact a {
+        color: rgba(31, 41, 55, 0.8) !important;
+        text-decoration: none;
+        font-size: 0.95rem;
+      }
+      footer#contact a:hover {
+        color: var(--pink-star) !important;
+        padding-left: 5px;
+      }
+      footer#contact i {
+        color: var(--pink-star);
+        margin-right: 10px;
+      }
+
+      /* --- TOAST & MODAL --- */
+      .toast-notif {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background: var(--pink-star);
+        color: white;
+        padding: 15px 25px;
+        border-radius: 50px;
+        box-shadow: 0 10px 25px rgba(255, 133, 161, 0.4);
+        z-index: 10000;
+        animation: slideIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+      @keyframes slideIn {
+        from {
+          transform: translateY(100px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+      .custom-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 10000;
+        align-items: center;
+        justify-content: center;
+        backdrop-filter: blur(5px);
+      }
+      .modal-body-custom {
+        background: white;
+        padding: 40px;
+        border-radius: 35px;
+        max-width: 450px;
+        width: 90%;
+        text-align: center;
+        border-top: 10px solid var(--pink-star);
+      }
+      .page-section {
+        display: none;
+        animation: fadeIn 0.6s;
+      }
+      .active-section {
+        display: block;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="modalAlert" class="custom-modal">
+      <div class="modal-body-custom">
+        <div style="font-size: 50px; margin-bottom: 10px">✨</div>
+        <h3
+          id="alertTitle"
+          style="font-family: 'Playfair Display', serif; font-weight: 700"
+        >
+          Info
+        </h3>
+        <p id="alertMessage" class="text-muted"></p>
+        <button
+          class="btn btn-danger w-100 rounded-pill py-3 fw-bold mt-2"
+          onclick="tutupAlert()"
+          style="background: var(--pink-star); border: none"
+        >
+          Oke!
+        </button>
+      </div>
+    </div>
+
+    <div id="modalTransfer" class="custom-modal">
+      <div
+        class="modal-body-custom"
+        style="border-top: 10px solid var(--blue-star)"
+      >
+        <h2
+          style="
+            font-family: 'Playfair Display', serif;
+            color: var(--pink-star);
+          "
+        >
+          Berhasil!
+        </h2>
+        <div id="instruksiBayar" class="my-3"></div>
+        <p class="mb-1 text-muted">Total Tagihan:</p>
+        <h1
+          id="totalPesan"
+          style="color: var(--blue-star); font-weight: 800; margin-bottom: 20px"
+        >
+          Rp 0
+        </h1>
+        <button
+          class="btn btn-dark w-100 rounded-pill py-3 fw-bold"
+          onclick="konfirmasiWA()"
+        >
+          📲 Konfirmasi ke WhatsApp
+        </button>
+        <button
+          class="btn btn-link text-muted mt-2 text-decoration-none"
+          onclick="tutupModal()"
+        >
+          Tutup
+        </button>
+      </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="logoonstarhijab.png" alt="Logo" class="logo-img" />
+          Onstar <span>Hijab</span>
+        </a>
+        <div class="ms-auto d-flex align-items-center">
+          <a
+            class="nav-link mx-2 fw-semibold"
+            onclick="showPage('home')"
+            style="cursor: pointer"
+            >Home</a
+          >
+          <a
+            class="nav-link mx-2 fw-semibold"
+            onclick="showPage('koleksi')"
+            style="cursor: pointer"
+            >Koleksi</a
+          >
+          <a
+            class="nav-link mx-2 fw-semibold"
+            onclick="showPage('keranjang')"
+            style="cursor: pointer"
+            >🛒 (<span id="cart-count">0</span>)</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <section id="home" class="page-section active-section">
+      <div class="hero-full">
+        <div class="container">
+          <h1>Onstar <span>Your Hijab</span></h1>
+          <p class="lead">Premium Hijab Collection - Simple & Elegant.</p>
+          <button
+            class="btn btn-danger rounded-pill fw-bold btn-hero-anim"
+            onclick="showPage('koleksi')"
+          >
+            Lihat Koleksi ✨
+          </button>
+        </div>
+      </div>
+
+      <footer id="contact">
+        <div class="container">
+          <div class="row g-4">
+            <div class="col-lg-5">
+              <div class="d-flex align-items-center gap-3 mb-2">
+                <img src="logoonstarhijab.png" class="brand-logo" alt="Logo" />
+                <div>
+                  <h5 class="fw-bold mb-0">Onstar Hijab</h5>
+                  <p class="small mb-0">Official Store</p>
+                </div>
+              </div>
+              <p class="mt-3">
+                Hijab premium yang didesain untuk kenyamanan harianmu. Simpel,
+                elegan, dan membuatmu tetap bercahaya. ✨
+              </p>
+            </div>
+            <div class="col-lg-4">
+              <h6 class="fw-bold">Alamat & Contact</h6>
+              <p>
+                <i class="bi bi-geo-alt"></i> Jl. Kaliurang Km 14,5, Yogyakarta
+              </p>
+              <p><i class="bi bi-telephone"></i> +62 857 4386 7657</p>
+              <p><i class="bi bi-envelope"></i> cs@onstarhijab.id</p>
+            </div>
+            <div class="col-lg-3">
+              <h6 class="fw-bold">Sosial Media</h6>
+              <div class="d-flex flex-column gap-2">
+                <a href="#"><i class="bi bi-instagram"></i> @onstarhijab</a>
+                <a href="#"><i class="bi bi-tiktok"></i> @onstarhijab</a>
+                <a href="https://wa.me/62857436767657"
+                  ><i class="bi bi-whatsapp"></i> +62 857 4367 6757</a
+                >
+              </div>
+            </div>
+          </div>
+          <hr style="opacity: 0.1; margin: 40px 0" />
+          <div class="d-flex justify-content-between small text-muted">
+            <p>© <span id="year"></span> Onstar Hijab. All rights reserved.</p>
+            <p>Privacy Policy • Terms of Service</p>
+          </div>
+        </div>
+      </footer>
+    </section>
+
+    <section id="koleksi" class="page-section py-5">
+      <div class="container">
+        <h2
+          class="text-center mb-5"
+          style="font-family: 'Playfair Display', serif; font-size: 3rem"
+        >
+          Our Collection
+        </h2>
+        <div class="row g-4" id="product-list"></div>
+      </div>
+    </section>
+
+    <section id="keranjang" class="page-section py-5">
+      <div class="container">
+        <div class="cart-container">
+          <div class="row g-5">
+            <div class="col-md-6 border-end">
+              <h4 class="fw-bold mb-4">🛒 Pesanan Anda</h4>
+              <div id="list-keranjang"></div>
+              <hr class="my-4" />
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="fs-5">Total:</span>
+                <strong
+                  id="total-harga"
+                  style="color: var(--pink-star); font-size: 2.2rem"
+                  >Rp 0</strong
+                >
+              </div>
+            </div>
+            <div class="col-md-6">
+              <h4 class="fw-bold mb-4">📍 Pengiriman</h4>
+              <input
+                type="text"
+                id="nama"
+                class="form-control"
+                placeholder="Nama Lengkap"
+              />
+              <input
+                type="tel"
+                id="telp"
+                class="form-control"
+                placeholder="Nomor WhatsApp"
+              />
+              <textarea
+                id="alamat"
+                class="form-control"
+                placeholder="Alamat Lengkap"
+                rows="3"
+              ></textarea>
+              <select id="metode" class="form-select">
+                <option value="qris">Bayar QRIS (Otomatis)</option>
+                <option value="tf">Transfer Mandiri</option>
+              </select>
+              <button class="btn-checkout" onclick="prosesPesanan()">
+                Konfirmasi & Bayar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      /* ================= GOOGLE SHEETS URL ================= */
+      // GANTI DENGAN LINK DEPLOY GOOGLE APPS SCRIPT KAMU
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbxRCP97vsgGc7QcAakUyxFjx3zrWCyNCGw_hIUlBBYtdMfQR5GgXkJE5VnUxfVjkpJP/exec";
+
+      /* ================= DATA PRODUK ================= */
+      const products = [
+        {
+          id: 1,
+          name: "Pashmina Viscose",
+          price: 45000,
+          image: "PashminaViscose.jpg",
+          stok: 10,
+          description:
+            "Pashmina lembut berbahan viscose, ringan dan nyaman dipakai.",
+        },
+        {
+          id: 2,
+          name: "Voal Sky",
+          price: 35000,
+          image: "VoalSky.jpg",
+          stok: 8,
+          description: "Voal premium dengan tekstur halus dan mudah dibentuk.",
+        },
+        {
+          id: 3,
+          name: "Instant Khimar",
+          price: 40000,
+          image: "InstantKhimar.jpg",
+          stok: 12,
+          description:
+            "Khimar instan berbahan crinkle airflow, adem dan stylish.",
+        },
+        {
+          id: 4,
+          name: "Plisket Pastel",
+          price: 45000,
+          image: "PashminaPlisket.jpg",
+          stok: 15,
+          description: "Hijab plisket warna pastel, flowy dan kekinian.",
+        },
+        {
+          id: 5,
+          name: "Bella Square",
+          price: 35000,
+          image: "BellaSquare.jpg",
+          stok: 20,
+          description: "Hijab segi empat bahan bella, ringan dan tidak licin.",
+        },
+        {
+          id: 6,
+          name: "Ceruty Premium",
+          price: 50000,
+          image: "PashminaCeruty.jpg",
+          stok: 7,
+          description: "Ceruty premium dengan tekstur halus dan jatuh elegan.",
+        },
+      ];
+
+      let cart = [];
+      let total = 0;
+
+      /* ================= RENDER PRODUK ================= */
+      function renderProducts() {
+        const container = document.getElementById("product-list");
+        container.innerHTML = products
+          .map(
+            (p) => `
+      <div class="col-md-4">
+        <div class="card-hijab text-center">
+          <div class="product-img-container">
+            <img src="${
+              p.image
+            }" onerror="this.src='https://via.placeholder.com/300x400?text=Onstar+Hijab'">
+          </div>
+          <h5 class="fw-bold">${p.name}</h5>
+          <p class="description">${p.description}</p>
+          <p class="text-muted">Rp ${p.price.toLocaleString()}</p>
+          <button class="btn btn-outline-danger btn-sm rounded-pill w-100"
+            onclick="addToCart(${p.id})" ${p.stok === 0 ? "disabled" : ""}>
+            ${p.stok === 0 ? "Stok Habis" : "Tambah ke Keranjang"}
+          </button>
+        </div>
+      </div>`
+          )
+          .join("");
+      }
+
+      function showPage(pageId) {
+        document
+          .querySelectorAll(".page-section")
+          .forEach((s) => s.classList.remove("active-section"));
+        document.getElementById(pageId).classList.add("active-section");
+        window.scrollTo(0, 0);
+      }
+
+      function addToCart(id) {
+        const p = products.find((i) => i.id === id);
+        if (p.stok > 0) {
+          p.stok--;
+          const item = cart.find((i) => i.id === id);
+          if (item) item.jumlah++;
+          else cart.push({ ...p, jumlah: 1 });
+          total += p.price;
+          document.getElementById("cart-count").innerText = cart.reduce(
+            (a, b) => a + b.jumlah,
+            0
+          );
+          updateUI();
+          showToast(`✅ ${p.name} masuk keranjang!`);
+        }
+      }
+
+      function showToast(msg) {
+        const t = document.createElement("div");
+        t.className = "toast-notif";
+        t.innerText = msg;
+        document.body.appendChild(t);
+        setTimeout(() => t.remove(), 3000);
+      }
+
+      function updateUI() {
+        const list = document.getElementById("list-keranjang");
+        list.innerHTML =
+          cart.length === 0
+            ? '<p class="text-muted py-4">Keranjang kosong.</p>'
+            : cart
+                .map(
+                  (i) =>
+                    `<div class="d-flex justify-content-between mb-3">
+                  <span>${i.name} (x${i.jumlah})</span>
+                  <span>Rp ${(i.price * i.jumlah).toLocaleString()}</span>
+                </div>`
+                )
+                .join("");
+        document.getElementById("total-harga").innerText =
+          "Rp " + total.toLocaleString();
+        renderProducts();
+      }
+
+      /* ================= PROSES PESANAN ================= */
+      function prosesPesanan() {
+        const nama = document.getElementById("nama").value;
+        const telp = document.getElementById("telp").value;
+        const alamat = document.getElementById("alamat").value;
+        const metode = document.getElementById("metode").value;
+
+        if (cart.length === 0)
+          return myAlert("Kosong!", "Pilih produk dulu ya.");
+        if (!nama || !telp || !alamat)
+          return myAlert("Data Kurang", "Lengkapi detail pengiriman.");
+
+        // ===== KIRIM KE GOOGLE SHEETS (TAMBAHAN) =====
+        const formData = new FormData();
+        formData.append("nama", nama);
+        formData.append("telp", telp);
+        formData.append("alamat", alamat);
+        formData.append("metode", metode);
+        formData.append("total", total);
+        formData.append(
+          "items",
+          cart.map((i) => `${i.name} (x${i.jumlah})`).join(", ")
+        );
+
+        fetch(scriptURL, {
+          method: "POST",
+          body: formData,
+        });
+
+        document.getElementById("totalPesan").innerText =
+          "Rp " + total.toLocaleString();
+
+        const instruksi = document.getElementById("instruksiBayar");
+        if (metode === "qris") {
+          instruksi.innerHTML = `<p>Scan QRIS untuk bayar:</p>
+        <img src="qris.jpeg" style="max-width:200px;border-radius:15px;">`;
+        } else {
+          instruksi.innerHTML = `<div class="p-3 bg-light rounded">
+        Transfer Mandiri:<br><b>1370025219649</b><br>a/n Onstar Hijab
+      </div>`;
+        }
+
+        document.getElementById("modalTransfer").style.display = "flex";
+      }
+
+      function myAlert(title, msg) {
+        document.getElementById("alertTitle").innerText = title;
+        document.getElementById("alertMessage").innerText = msg;
+        document.getElementById("modalAlert").style.display = "flex";
+      }
+
+      function tutupAlert() {
+        document.getElementById("modalAlert").style.display = "none";
+      }
+
+      function tutupModal() {
+        document.getElementById("modalTransfer").style.display = "none";
+      }
+
+      function konfirmasiWA() {
+        const rincian = cart
+          .map((i) => `- ${i.name} (x${i.jumlah})`)
+          .join("\n");
+        const msg = `Halo Onstar Hijab!\nSaya ingin konfirmasi pesanan baru:\n\nNama: ${
+          document.getElementById("nama").value
+        }\nPesanan:\n${rincian}\nTotal: Rp ${total.toLocaleString()}`;
+        window.open(
+          "https://wa.me/6285743867657?text=" + encodeURIComponent(msg)
+        );
+      }
+
+      /* ================= INIT ================= */
+      window.onload = () => {
+        renderProducts();
+        document.getElementById("year").innerText = new Date().getFullYear();
+      };
+    </script>
+  </body>
+</html>
